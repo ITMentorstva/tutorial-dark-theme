@@ -1,107 +1,41 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Dark Mode</title>
-    <style>
-        /* Default light theme using CSS variables */
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #121212;
-            --card-bg: #f0f0f0;
-            --accent-color: #0077ff;
-        }
 
-        /* Dark theme overrides */
-        body.dark-mode {
-            --bg-color: #121212;
-            --text-color: #f1f1f1;
-            --card-bg: #1e1e1e;
-            --accent-color: #3399ff;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-        /* Apply theme */
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: sans-serif;
-            transition: all 0.1s ease;
-            margin: 0;
-            padding: 0;
-        }
+    <body>
+        
+        <header>
+            <h1>Moj sajt</h1>
+            <button id="theme-toggle">Dark mode</button>
+        </header>
 
-        .navbar {
-            background: var(--card-bg);
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        <main>
 
-        button {
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-        }
+            <section class="card">
+                <h2>Article 1</h2>
+                <p>Hello world</p>
+            </section>
 
-        .card {
-            background: var(--card-bg);
-            margin: 2rem;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+            <section class="card">
+                <h2>Article 2</h2>
+                <p>Hello world</p>
+            </section>
 
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background: var(--card-bg);
-        }
+        </main>
 
-    </style>
-</head>
-<body>
-<header class="navbar">
-    <h1>My Site</h1>
-    <button id="theme-toggle">Toggle Theme</button>
-</header>
+        <footer>
+            <p>Copyright at today!</p>
+        </footer>
 
-<main>
-    <section class="card">
-        <h2>Welcome</h2>
-        <p>This card changes color with the theme.</p>
-    </section>
+        <script src="script.js"></script>
 
-    <section class="card">
-        <h2>About</h2>
-        <p>Everything adapts—backgrounds, text, and accents.</p>
-    </section>
-</main>
+    </body>
 
-<footer>
-    <p>Made with ❤️</p>
-</footer>
-
-<script>
-    const toggleBtn = document.getElementById('theme-toggle');
-
-    // Load saved theme
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-mode');
-    }
-
-    // Toggle theme on button click
-    toggleBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-
-        // Save current theme
-        const isDark = document.body.classList.contains('dark-mode');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
-
-</script>
-</body>
 </html>
